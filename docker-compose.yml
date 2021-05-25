@@ -17,6 +17,7 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    privileged: true
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
       ELASTIC_PASSWORD: changeme
@@ -45,6 +46,7 @@ services:
       - "5000:5000/tcp"
       - "5000:5000/udp"
       - "9600:9600"
+    privileged: true
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
@@ -64,6 +66,7 @@ services:
         read_only: true
     ports:
       - "5601:5601"
+    privileged: true
     networks:
       - elk
     depends_on:
